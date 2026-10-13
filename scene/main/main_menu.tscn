@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cqbolxd57kdm6"]
+
+[ext_resource type="Script" uid="uid://b0edsopp2tae" path="res://scripts/main_menu.gd" id="1_0iwki"]
+[ext_resource type="Texture2D" uid="uid://cdqlqrh2rkkbd" path="res://assert/groundback.png" id="1_2fwvj"]
+[ext_resource type="Texture2D" uid="uid://oya8wpn6jmc8" path="res://icon.svg" id="2_0iwki"]
+[ext_resource type="PackedScene" uid="uid://bbujs6ukk61tk" path="res://scene/main/level_menu.tscn" id="4_0iwki"]
+
+[node name="MainMenu" type="Control" unique_id=154891254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0iwki")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1875119789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4360687, 0.78526133, 0.9121282, 1)
+
+[node name="Background" type="Sprite2D" parent="ColorRect" unique_id=759860598]
+texture_repeat = 2
+position = Vector2(2304, 1296)
+texture = ExtResource("1_2fwvj")
+region_enabled = true
+region_rect = Rect2(0, 0, 4608, 2592)
+
+[node name="ReverseTimer" type="Timer" parent="ColorRect" unique_id=804960731]
+wait_time = 20.0
+autostart = true
+
+[node name="CenaterUI" type="MarginContainer" parent="." unique_id=1843773011]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenaterUI" unique_id=1674201043]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CenaterUI/HBoxContainer" unique_id=1450478615]
+layout_mode = 2
+texture = ExtResource("2_0iwki")
+
+[node name="StartButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=908127383]
+layout_mode = 2
+text = "START"
+
+[node name="HelpButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=639878347]
+layout_mode = 2
+text = "START"
+
+[node name="SetttingsButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=1571312269]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=1881807006]
+layout_mode = 2
+text = "QUIT"
+
+[node name="LevelMenu" parent="." unique_id=1460286946 instance=ExtResource("4_0iwki")]
+visible = false
+layout_mode = 1
+
+[node name="HelpMenu" type="Control" parent="." unique_id=215182203]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="timeout" from="ColorRect/ReverseTimer" to="." method="_on_reverse_timer_timeout"]
+[connection signal="pressed" from="CenaterUI/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenaterUI/HBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="CenaterUI/HBoxContainer/SetttingsButton" to="." method="_on_setttings_button_pressed"]
+[connection signal="pressed" from="CenaterUI/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

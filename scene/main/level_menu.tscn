@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bbujs6ukk61tk"]
+
+[ext_resource type="Script" uid="uid://db3fgq8nwhqsc" path="res://scripts/level_menu.gd" id="1_g2ot0"]
+[ext_resource type="PackedScene" uid="uid://7ncn21h6sdc" path="res://scene/main/level_node.tscn" id="2_g2ot0"]
+
+[node name="LevelMenu" type="Control" unique_id=1460286946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2ot0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=348217506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ExitButton" type="Button" parent="MarginContainer" unique_id=46477071]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "<--"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=54578089]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 6
+
+[node name="LevelNode" parent="MarginContainer/GridContainer" unique_id=626376100 instance=ExtResource("2_g2ot0")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]

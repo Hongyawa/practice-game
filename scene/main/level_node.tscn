@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://7ncn21h6sdc"]
+
+[ext_resource type="Script" uid="uid://bwnm8qnh1kl57" path="res://scripts/level_node.gd" id="1_c2dv4"]
+[ext_resource type="Texture2D" uid="uid://oya8wpn6jmc8" path="res://icon.svg" id="1_rpbo2"]
+
+[node name="LevelNode" type="Control" unique_id=626376100]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_c2dv4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2020651567]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rpbo2")
+
+[node name="LevelButton" type="Button" parent="TextureRect" unique_id=1060196790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[connection signal="pressed" from="TextureRect/LevelButton" to="." method="_on_level_button_pressed"]
