@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdqlqrh2rkkbd" path="res://assert/groundback.png" id="1_2fwvj"]
 [ext_resource type="Texture2D" uid="uid://oya8wpn6jmc8" path="res://icon.svg" id="2_0iwki"]
 [ext_resource type="PackedScene" uid="uid://bbujs6ukk61tk" path="res://scene/main/level_menu.tscn" id="4_0iwki"]
+[ext_resource type="Texture2D" uid="uid://rkkypfdkaici" path="res://assert/back.png" id="5_dbghu"]
 
 [node name="MainMenu" type="Control" unique_id=154891254]
 layout_mode = 3
@@ -60,7 +61,7 @@ text = "START"
 
 [node name="HelpButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=639878347]
 layout_mode = 2
-text = "START"
+text = "HELP"
 
 [node name="SetttingsButton" type="Button" parent="CenaterUI/HBoxContainer" unique_id=1571312269]
 layout_mode = 2
@@ -74,13 +75,60 @@ text = "QUIT"
 visible = false
 layout_mode = 1
 
-[node name="HelpMenu" type="Control" parent="." unique_id=215182203]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HelpMenu" type="Panel" parent="." unique_id=1163673763]
+visible = false
+custom_minimum_size = Vector2(600, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -225.0
+offset_right = 300.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="Label" parent="HelpMenu" unique_id=1344950776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -11.5
+offset_right = 48.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "按方向键移动
+设置界面目前没有做
+箱子的移动也没有做
+关卡出口也没有做"
+
+[node name="ConfirmButton" type="Button" parent="HelpMenu" unique_id=821308488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 130.0
+offset_right = 4.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OK"
+icon = ExtResource("5_dbghu")
 
 [connection signal="timeout" from="ColorRect/ReverseTimer" to="." method="_on_reverse_timer_timeout"]
 [connection signal="pressed" from="CenaterUI/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenaterUI/HBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="CenaterUI/HBoxContainer/SetttingsButton" to="." method="_on_setttings_button_pressed"]
 [connection signal="pressed" from="CenaterUI/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HelpMenu/ConfirmButton" to="." method="_on_confirm_button_pressed"]

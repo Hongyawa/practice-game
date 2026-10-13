@@ -10,7 +10,7 @@ var background_position: Vector2
 const SELECT_LEVEL_MENU = preload("uid://bbujs6ukk61tk")
 @onready var cenater_ui: MarginContainer = $CenaterUI
 @onready var level_menu: Control = $LevelMenu
-@onready var help_menu: Control = $HelpMenu
+@onready var help_menu: Panel = $HelpMenu
 
 
 func _ready() -> void:
@@ -40,9 +40,17 @@ func from_level_menu_exit():
 	cenater_ui.visible = true
 	level_menu.visible = false
 
+
 ## 按下帮助按钮之后,显示提示界面
 func _on_help_button_pressed() -> void:
+	cenater_ui.visible = false
 	help_menu.visible = true
+
+
+## 按下帮助界面里面的确定按钮之后
+func _on_confirm_button_pressed() -> void:
+	help_menu.visible = false
+	cenater_ui.visible = true
 
 
 ## 按下设置按钮之后的操作,隐藏主界面,显示设置界面(未制作)
