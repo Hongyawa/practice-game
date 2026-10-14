@@ -105,7 +105,10 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "第一关还在制作"
+text = "按方向键移动
+设置界面目前没有做
+箱子的移动也没有做
+关卡出口也没有做"
 
 [node name="ConfirmButton" type="Button" parent="HelpMenu" unique_id=821308488]
 layout_mode = 1
