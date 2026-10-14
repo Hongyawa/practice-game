@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbujs6ukk61tk"]
 
 [ext_resource type="Script" uid="uid://db3fgq8nwhqsc" path="res://scripts/level_menu.gd" id="1_g2ot0"]
-[ext_resource type="PackedScene" uid="uid://7ncn21h6sdc" path="res://scene/main/level_node.tscn" id="2_g2ot0"]
+[ext_resource type="PackedScene" uid="uid://7ncn21h6sdc" path="res://scene/ui/level_node.tscn" id="2_g2ot0"]
 
 [node name="LevelMenu" type="Control" unique_id=1460286946]
 layout_mode = 3

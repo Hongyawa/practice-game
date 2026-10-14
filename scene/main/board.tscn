@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://chnsso8ugr8dc"]
+
+[ext_resource type="Script" uid="uid://nt6341pjn7yj" path="res://scripts/board.gd" id="1_7tm6y"]
+[ext_resource type="Texture2D" uid="uid://dx40wky6pxcoa" path="res://assert/board.png" id="1_84jic"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_laxja"]
+radius = 23.0
+height = 115.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7tm6y"]
+font_size = 48
+
+[node name="Board" type="Area2D" unique_id=1392338773]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_7tm6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459925591]
+texture = ExtResource("1_84jic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1450927119]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_laxja")
+
+[node name="Label" type="Label" parent="." unique_id=936284164]
+custom_minimum_size = Vector2(450, 0)
+custom_maximum_size = Vector2(450, -1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -164.0
+offset_right = 251.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Hello, World!!!"
+label_settings = SubResource("LabelSettings_7tm6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

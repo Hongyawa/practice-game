@@ -2,13 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://m6aj8jhj3klu" path="res://assert/box.png" id="1_i5xlm"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kx6l7"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qnnuf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nu7g"]
 size = Vector2(48, 48)
 
-[node name="Box" type="RigidBody2D" unique_id=897881420]
-physics_material_override = SubResource("PhysicsMaterial_kx6l7")
+[node name="Box" type="RigidBody2D" unique_id=54469225 groups=["box"]]
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_qnnuf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=312701391]
 texture = ExtResource("1_i5xlm")
