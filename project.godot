@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="加急赶工"
-run/main_scene="uid://c7vii7gyhv3pn"
+run/main_scene="uid://cqbolxd57kdm6"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
